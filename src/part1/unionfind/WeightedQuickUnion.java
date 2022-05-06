@@ -1,5 +1,7 @@
 package part1.unionfind;
 
+import java.util.Arrays;
+
 public class WeightedQuickUnion implements UnionFind {
 
     private final int[] id;
