@@ -30,7 +30,7 @@ public class SocialNetworkConnectivity {
      *
      * @param logFile - path to log file
      * @return timestamp if exists when all friends are connected
-     * @throws IOException - occured if file not found
+     * @throws IOException - occurred if file not found
      */
     public String findMinimumTimestamp(String logFile) throws IOException {
         List<String> data = loadDataFromFile(logFile);
