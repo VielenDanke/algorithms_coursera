@@ -22,10 +22,10 @@ public class SearchBitonicArray {
 
             if (nums[mid] == target) {
                 return true;
-            } else if (nums[mid] < target) {
-                left = mid + 1;
-            } else {
+            } else if ((nums[left] < nums[right] && target < nums[mid]) || (nums[left] > nums[right] && target > nums[mid])) {
                 right = mid - 1;
+            } else {
+                left = mid + 1;
             }
         }
         return false;
