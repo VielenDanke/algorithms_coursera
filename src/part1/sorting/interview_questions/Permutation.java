@@ -1,6 +1,6 @@
 package part1.sorting.interview_questions;
 
-import part1.sorting.Sort;
+import part1.sorting.simple.Sort;
 
 import java.util.HashMap;
 import java.util.Map;
