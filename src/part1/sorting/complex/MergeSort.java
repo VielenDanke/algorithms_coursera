@@ -19,6 +19,17 @@ public class MergeSort {
         sort(a, aux, 0, N - 1);
     }
 
+    public static Comparable[] sortWithoutRecursion(Comparable[] a) {
+        int N = a.length;
+        Comparable[] aux = new Comparable[N];
+        for (int sz = 1; sz < N; sz = sz + sz) {
+            for (int lo = 0; lo < N - sz; lo += sz + sz) {
+                merge(a, aux, lo, lo + sz - 1, Math.min(lo + sz + sz - 1, N - 1));
+            }
+        }
+        return a;
+    }
+
     private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
         if (hi <= lo + CUTOFF - 1) {
             // perform insertion sort on small enough array
@@ -61,7 +72,7 @@ public class MergeSort {
         for (int i = 0; i < 100; i++) {
             integers[i] = random.nextInt(100);
         }
-        MergeSort.sort(integers);
+        MergeSort.sortWithoutRecursion(integers);
         assert isSorted(integers);
     }
 }
